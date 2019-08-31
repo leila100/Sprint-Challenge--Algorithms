@@ -124,8 +124,6 @@ class SortingRobot:
                 self.move_right()
                 if not self.can_move_right():
                     self.set_light_off()
-            # else:
-            #     self.set_light_off()
 
 
 if __name__ == "__main__":
