@@ -108,20 +108,27 @@ class SortingRobot:
            - do same until end of list
         """
         self.set_light_on()
+        # keep going until the list is sorted
         while self.light_is_on():
+            # get the next number in the rest of the unsorted list
             self.swap_item()
+            # go through the rest of the list - to the right - and look for a smaller number
             while self.can_move_right():
                 self.move_right()
+                # if the number the robot is holding is bigger that the number, swap numbers
                 if self.compare_item() == 1:
                     # found a smaller number
                     self.swap_item()
+            # go back to the left and insert the smallest number found - the one the robot is holding - when the None number is
             while self.can_move_left():
                 self.move_left()
                 if self.compare_item() == None:
                     self.swap_item()
                     break
+            # if there's a next number, move to the next number
             if self.can_move_right():
                 self.move_right()
+                # if the next number is at the end of the list, the list is sorted - turn off the robot
                 if not self.can_move_right():
                     self.set_light_off()
 
