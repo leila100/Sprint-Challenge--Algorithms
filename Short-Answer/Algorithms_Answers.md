@@ -31,8 +31,14 @@ if n == 1:
 return start
 middle = (end-start) // 2
 if egg breaks at middle:
+
 <!-- if egg breaks at middle, try a floor n/2 lower -->
+
 return get_f((end-start), start, middle)
 else:
+
 <!-- if egg doesn't break, try a floor n/2 above -->
+
 return get_f((end-start), middle, end)
+
+Runtime complexity would be: log(n) because we always divide the problem in two.
